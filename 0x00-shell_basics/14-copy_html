@@ -1,2 +1,2 @@
 #!/bin/bash
-cp rwu *.html
+cp rua *.html ../
