@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+
+NAME="Best School Best School Best School Best School Best School"
+
+for NAME in $NAME
+do
+	echo "Best School"
+done
+
