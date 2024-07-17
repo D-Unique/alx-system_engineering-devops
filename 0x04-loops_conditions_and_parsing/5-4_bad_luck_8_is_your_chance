@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#This script displays bad luck for the 4th loop iteration good luck for the 8th loop iteration Best School for the other iterations
+
+COUNT=1
+while [ $COUNT -le 10 ];
+do
+echo "Best School"
+if [ $COUNT -eq 3 ];
+then
+echo "bad luck"
+COUNT=$((COUNT+1))
+elif [ $COUNT -eq 7 ];
+then
+echo "good luck"
+COUNT=$((COUNT+1))
+fi
+COUNT=$((COUNT+1))
+done
