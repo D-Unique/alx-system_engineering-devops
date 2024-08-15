@@ -5,14 +5,16 @@
 def top_ten(subreddit):
     """Queries the Reddit API and returns the top 10 hot posts
     of the subreddit"""
+    import json
     import requests
-
-    sub_info = requests.get("https://www.reddit.com/r/{}/hot.json?limit=10"
-                            .format(subreddit),
-                            headers={"User-Agent": "My-User-Agent"},
-                            allow_redirects=False)
-    if sub_info.status_code >= 300:
-        print('None')
+    with open('file.json', 'r') as f:
+        header = json.load(f)
+    url = f"https://oauth.reddit.com/r/{subreddit}/hot?limit=8&offset=0"
+    resss = requests.get(url=url,
+                         headers=header, allow_redirects=False,)
+    if resss.status_code != 200:
+        print('none')
     else:
-        [print(child.get("data").get("title"))
-         for child in sub_info.json().get("data").get("children")]
+        post = resss.json()['data']['children']
+        for item in post:
+            print(item['data']['title'])
