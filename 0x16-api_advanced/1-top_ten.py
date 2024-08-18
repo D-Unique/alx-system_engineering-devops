@@ -7,11 +7,11 @@ def top_ten(subreddit):
     of the subreddit"""
     import json
     import requests
-    with open('file.json', 'r') as f:
-        header = json.load(f)
-    url = f"https://oauth.reddit.com/r/{subreddit}/hot?limit=8&offset=0"
+    #with open('file.json', 'r') as f:
+        #header = json.load(f)
+    url = f"https://reddit.com/r/{subreddit}/hot.json"
     resss = requests.get(url=url,
-                         headers=header, allow_redirects=False,)
+                         headers={"User-Agent": "My-User-Agent"}, allow_redirects=False,)
     if resss.status_code != 200:
         print('none')
     else:
