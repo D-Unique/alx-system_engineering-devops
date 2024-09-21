@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#this script setsup a config file to run passwordless ssh auth
+
+Host dev
+    HostName 54.237.23.230
+    User ubuntu
+    PasswordAuthentication no
+    ChallengeResponseAuthentication no
+    UsePAM no
