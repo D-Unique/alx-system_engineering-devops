@@ -6,6 +6,11 @@ using this REST API, for a given employee ID
 """
 import requests
 import sys
+"""
+This module contains a Python script that returns
+information about an employee's TODO list progress,
+using this REST API, for a given employee ID
+"""
 
 
 id = sys.argv[1]
