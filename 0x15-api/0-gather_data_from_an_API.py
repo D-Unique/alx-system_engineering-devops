@@ -30,7 +30,7 @@ def main():
         else:
             total += 1
             count += 1
-    print(f"Employee {userdata['name']} is done with tasks({count}/{total})")
+    print(f"Employee {userdata['name']} is done with tasks({count}/{total}):")
 
     for item in completed_task:
         print('\t', end=' ')
