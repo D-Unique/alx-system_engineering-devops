@@ -31,10 +31,9 @@ def main():
             total += 1
             count += 1
     print(f"Employee {userdata['name']} is done with tasks({count}/{total}):")
-
-    for item in completed_task:
-        print('\t', end=' ')
-        print(f"{item['title']}")
+    for i, item in enumerate(completed_task):
+        print(f"\t{item['title']}", end="\n"
+              if i < len(completed_task) - 1 else "")
 
 
 if __name__ == "__main__":
