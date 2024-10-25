@@ -13,13 +13,15 @@ Returns:
     A JSON object containing the fetched data.
 """
 
+
 def main():
+    """my func"""
     id = sys.argv[1]
     r = requests.get(f'https://jsonplaceholder.typicode.com/users/{id}')
     t = requests.get(f'https://jsonplaceholder.typicode.com/users/{id}/todos')
     data = r.json()
     task = t.json()
-    
+
     count = 0
     total = 0
     for item in task:
@@ -32,7 +34,7 @@ def main():
     for item in task:
         print('\t', end='')
         print(f"{item['title']}")
-    
+
 
 if __name__ == "__main__":
     main()
