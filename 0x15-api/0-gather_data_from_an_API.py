@@ -32,7 +32,7 @@ def main():
             count += 1
     print(f"Employee {userdata['name']} is done with tasks({count}/{total}):")
     for i, item in enumerate(completed_task):
-        print(f"\t{item['title']}", end="\n"
+        print(f"\t{' '}{item['title']}", end="\n"
               if i < len(completed_task) - 1 else "")
 
 
