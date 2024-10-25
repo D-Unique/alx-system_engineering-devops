@@ -15,25 +15,22 @@ Returns:
 
 
 def main():
-    """my func"""
+    """ def com """
     id = sys.argv[1]
-    r = requests.get(f'https://jsonplaceholder.typicode.com/users/{id}')
-    t = requests.get(f'https://jsonplaceholder.typicode.com/users/{id}/todos')
-    data = r.json()
-    task = t.json()
-
-    count = 0
-    total = 0
-    for item in task:
-        if item['completed'] is False:
-            total += 1
-        else:
-            total += 1
-            count += 1
-    print(f"Employee {data['name']} is done with tasks({count}/{total})")
-    for item in task:
-        print('\t', end='')
-        print(f"{item['title']}")
+    url = f'https://jsonplaceholder.typicode.com/'
+    users = f'users?id={id}'
+    todos = f'todos?userId={id}'
+    done = f'{todos}&completed=true'
+    notDone = f'{todos}&completed=false'
+    userData = requests.get(f'{url}{users}').json()
+    Name = userData[0].get("name")
+    todosData = requests.get(f'{url}{todos}').json()
+    todosDone = requests.get(f'{url}{done}').json()
+    doneN = len(todosDone)
+    totalN = len(todosData)
+    print(f'Employee {Name} is done with tasks({doneN}/{totalN}):')
+    for task in todosDone:
+        print("\t "+task.get("title"))
 
 
 if __name__ == "__main__":
