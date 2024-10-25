@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-import requests
-import sys
-
 """
 This module fetches data from a specified API endpoint.
 
@@ -12,6 +9,8 @@ Args:
 Returns:
     A JSON object containing the fetched data.
 """
+import requests
+import sys
 
 
 def main():
@@ -34,7 +33,7 @@ def main():
     print(f"Employee {userdata['name']} is done with tasks({count}/{total})")
 
     for item in completed_task:
-        print('\t', end='')
+        print('\t', end=' ')
         print(f"{item['title']}")
 
 
